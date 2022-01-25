@@ -3,13 +3,22 @@
   :url "http://example.com/FIXME"
   :min-lein-version "2.0.0"
   :main invoice-api.handler
+  :migratus {:store :database
+             :migration-dir "migrations"
+             :db {:classname "org.postgresql.Driver"
+                  :subprotocol "postgresql"
+                  :subname "//localhost:5432/invoices_api_dev"
+                  :user "aristotelescosta"
+                  :password "postgres"}}
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [compojure "1.6.1"]
+                 [migratus "1.3.5"]
+                 [org.postgresql/postgresql "42.1.4"]
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-jetty-adapter "1.9.5"]]
-  :plugins [[lein-ring "0.12.5"]]
+  :plugins [[lein-ring "0.12.5"]
+            [migratus-lein "0.7.3"]]
   :ring {:handler invoice-api.handler/app}
   :profiles
-  ;; {:uberjar {:aot :all}
    {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
-                        [ring/ring-mock "0.3.2"]]}})
+                         [ring/ring-mock "0.3.2"]]}})
