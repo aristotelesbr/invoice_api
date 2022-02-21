@@ -5,6 +5,8 @@
 
 (defroutes app-routes
   (GET "/" [] "Hello World")
+  (POST "/" [request]
+    (prn request))
   (route/not-found "Not Found"))
 
 (def app
