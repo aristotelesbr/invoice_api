@@ -15,7 +15,9 @@
                  [migratus "1.3.5"]
                  [org.postgresql/postgresql "42.1.4"]
                  [ring/ring-defaults "0.3.2"]
-                 [ring/ring-jetty-adapter "1.9.5"]]
+                 [ring/ring-jetty-adapter "1.9.5"]
+                 [com.github.seancorfield/honeysql "2.2.858"]
+                 [com.github.seancorfield/next.jdbc "1.2.796"]]
   :plugins [[lein-ring "0.12.5"]
             [migratus-lein "0.7.3"]]
   :ring {:handler invoice-api.handler/app}

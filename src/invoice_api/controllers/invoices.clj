@@ -1,9 +1,10 @@
-(ns invoice-api.controllers.invoices)
+(ns invoice-api.controllers.invoices
+  (:require [config.db.core :refer [get-invoices get-invoice-by-id]]))
 
 (defn index
-  [request]
-  "Hello from index!")
+  []
+  (str (get-invoices)))
 
 (defn show
   [id]
-  (str "ID is " id))
+  (str (get-invoice-by-id id)))

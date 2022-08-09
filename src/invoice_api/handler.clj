@@ -7,7 +7,7 @@
             [invoice-api.controllers.invoices :as invoices]))
 
 (defroutes site
-  (GET "/invoices" [] invoices/index)
+  (GET "/invoices" [] (invoices/index))
   (GET "/invoices/:id{[0-9]+}" [id] (invoices/show id))
   (route/not-found "Not Found"))
 
