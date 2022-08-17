@@ -17,8 +17,9 @@
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-jetty-adapter "1.9.5"]
                  [com.github.seancorfield/honeysql "2.2.858"]
-                 [com.github.seancorfield/next.jdbc "1.2.796"]]
-  :plugins [[lein-ring "0.12.5"]
+                 [com.github.seancorfield/next.jdbc "1.2.796"]
+                 [selmer "1.12.53"]]
+  :plugins [[lein-ring "0.12.6"]
             [migratus-lein "0.7.3"]]
   :ring {:handler invoice-api.handler/app}
   :profiles

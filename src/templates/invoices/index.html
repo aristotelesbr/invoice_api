@@ -1,0 +1,17 @@
+<h1>Lista de faturas </h1>
+<ul>
+  {% debug %}
+</ul>
+
+<hr>
+
+<ul>
+  {% for invoice in invoices %}
+  <li>
+    <div>id: {{invoice.id}}</div>
+    <div>Código: {{invoice.code}}></div>
+    <div>Descrição: {{invoice.title}}</div>
+    <div>Data de Criação: {{invoice.date}}</div>
+  </li>
+  {% endfor %}
+</ul>
